@@ -57,7 +57,7 @@ const ExpenseRow = ({ expenseList,setExpenseList,setexpense,selectCategories,set
                 }}
                  className='bg-amber-400 p-1 md:text-xl sm:text-sm active:scale-95 rounded '>Edit</button>
                  {selectedExpense && createPortal(
-            <div className='fixed inset-0 flex items-center justify-center bg-black/50'>
+            <div className='fixed inset-0 z-50 flex items-center justify-center bg-black/50'>
                 <EditExpense key={selectedExpense.id} setExpenseList={setExpenseList} setexpense={setexpense}   setSelectedExpense={setSelectedExpense} selectedExpense={selectedExpense} />
             </div>,
             document.body

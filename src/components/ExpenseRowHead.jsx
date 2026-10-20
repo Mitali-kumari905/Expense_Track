@@ -6,7 +6,7 @@ const ExpenseRowHead = ({selectCategories,setselectCategories}) => {
     const [filter,setfilter]=useState(false);
   return (
     <div className='w-full'>
-        <div className='bg-amber-800 justify-between  flex gap-12 rounded flex-row p-2 text-white'>
+        <div className='bg-amber-800 lg:text-3xl md:text-2xl text-xl justify-between  flex lg:gap-12 md:gap-10 gap-8 rounded flex-row p-2 text-white'>
             <div className='w-[32%]'>
                 Description
             </div>
@@ -20,15 +20,15 @@ const ExpenseRowHead = ({selectCategories,setselectCategories}) => {
             </div>
             <div className='relative'>
                  <button
-                  className='flex h-10 active:scale-95 rounded align-center p-2 bg-white'>
-                     <SlidersHorizontal
+                  className='flex lg:h-10 md:h-9 h-8 active:scale-95 rounded align-center lg:p-2 p-1 bg-white'>
+                     <SlidersHorizontal className='lg:size-9 md:size-7 size-6'
                      onClick={()=>setfilter(!filter)} color="#252323" />
                 </button>
                 {filter && (
-                     <div className="bg-white absolute text-xl text-amber-900 p-4 rounded-lg shadow-lg mt-2">
+                     <div className="bg-white absolute text-xl  text-amber-900 p-4 rounded-lg shadow-lg mt-2">
                         <h3 className="font-bold">Filter by category</h3>
                         {['Housing','Utilities','Food & Groceries','Transportation','Healthcare & Medical','Personal Care','Entertainment','Family & Pet Care','Saving & Investement'].map((category)=>(
-                            <label key={category} className='flex text-sm items-center gap-2 mt-2'>
+                            <label key={category} className='flex md:text-sm text-xs items-center gap-2 mt-2'>
                                 <input type="checkbox" checked={selectCategories.includes(category)}
                                 onChange={()=>{
                                     setselectCategories((prev)=>prev.includes(category)?prev.filter((item)=>item!=category):[...prev,category]);
@@ -37,7 +37,7 @@ const ExpenseRowHead = ({selectCategories,setselectCategories}) => {
                         ))}
                         <button type='button'
                         onClick={()=>setselectCategories([])}
-                        className='mt-3 text-sm  w-full rounded-full bg-amber-800 p-2 text-white hover:bg-amber-900'>
+                        className='mt-3 md:text-sm text-xs w-full rounded-full bg-amber-800 p-2 text-white hover:bg-amber-900'>
                             Clear Filters
                         </button>
 

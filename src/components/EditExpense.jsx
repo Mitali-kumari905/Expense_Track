@@ -7,7 +7,7 @@ const EditExpense = (props) => {
     const [dupamount,setdupamount]=useState(props.selectedExpense.amount);
     const [dupCustCategory,setdupCustCategory]=useState('');
   return (
-    <div className='bg-white  w-[30%] p-5 rounded-lg'>
+    <div className='bg-white border border-gray-400 shadow-xl shadow-gray-500  lg:w-[30%] w-[40%] p-5 rounded-lg'>
         <form onSubmit={(e)=>{
             e.preventDefault();
             props.setexpense((prev)=>prev-props.selectedExpense.amount+Number(dupamount))
@@ -29,22 +29,22 @@ const EditExpense = (props) => {
         }}>
             <div className='p-2'>
                 <div>
-                    <p className='text-xl font-bold'>Edit Expense</p>
-                    <p className='py-1 text-gray-600'>Update the details of your expense</p>
+                    <p className='lg:text-lg md:text-xl text-sm font-bold'>Edit Expense</p>
+                    <p className='py-1 lg:text-xl md:text-sm text-xs text-gray-600'>Update the details of your expense</p>
                 </div>
                 <div className='h-0.5 w-[80%] bg-gray-300'></div>
             </div>
             <div className='py-4'>
                 <div>
                     <div>
-                        <p className='text-lg font-semibold'>Category</p>
+                        <p className='lg:text-lg md:text-xl text-sm font-semibold'>Category</p>
                     </div>
                             <select required
                             value={dupCategory}
                              onChange={(e)=>{
                                 setdupCategory(e.target.value);
                              }}
-                             id="category" className='select w-full px-4 py-3 rounded mt-3 shadow-lg bg-slate-100 focus:outline-none focus:border focus:border-blue-300'>
+                             id="category" className='select lg:text-xl md:text-sm text-sm w-full px-4 py-3 rounded mt-3 shadow-lg bg-slate-100 focus:outline-none focus:border focus:border-blue-300'>
                                 <option value="Housing">Housing</option>
                                 <option value="Utilities">Utilities</option>
                                 <option value="Food & Groceries">Food & Groceries</option>
@@ -58,7 +58,7 @@ const EditExpense = (props) => {
                             </select>
                 </div>
                 {dupCategory==="Other"?<div>
-                    <div className='py-4'>
+                    <div className='lg:py-4 md:py-3 py-2  lg:text-xl md:text-sm text-xs'>
                     <p className='py-1 font-semibold'>Specify the category</p>
                     <input
                     onChange={(e)=>{
@@ -68,21 +68,21 @@ const EditExpense = (props) => {
                 </div>:null}
                 <div className='py-2'>
                     <div className='py-1'>
-                        <p className='text-lg font-semibold'>Amount</p>
+                        <p className='lg:text-xl md:text-sm text-sm font-semibold'>Amount</p>
                     </div>
-                    <div className='mt-2 p-4 bg-gray-300 flex items-center flex-row border rounded-xl border-gray-500'>
-                    <p><IndianRupee color="#252323" className='p-1' size={30} /></p>
+                    <div className='mt-2 lg:p-4 md:p-3 p-2 bg-gray-300 flex items-center flex-row border rounded-xl border-gray-500'>
+                    <p><IndianRupee color="#252323" className='p-1 lg:size-9 md:size-8 size-7'  /></p>
                         <input type="number" value={dupamount} min="1"  placeholder='Money Spended'
-                         className='bg-gray-400 rounded-full w-full px-5 h-10 focus:outline focus:outline-sky-400'
+                         className='bg-gray-400 rounded-full w-full px-5 lg:h-10 md:h-8 h-6 focus:outline focus:outline-sky-400'
                         onChange={(e)=>{
                             setdupamount(e.target.value);
                         }} />
                     </div>
                 </div>
-                <div className='py-4'>
+                <div className='lg:py-4 md:py-3 py-2'>
                     <p className='py-1 font-semibold'>Description</p>
                     <textarea value={dupdescription}  id="description" 
-                    className='border py-2 px-2 rounded border-slate-300 w-full focus:outline-none focus:border focus:border-blue-300 '
+                    className='border md:py-2 py-1 md:px-2 px-1 rounded border-slate-300 w-full focus:outline-none focus:border focus:border-blue-300 '
                     onChange={(e)=>{
                         setdupdescription(e.target.value);
                     }} ></textarea>
@@ -92,11 +92,11 @@ const EditExpense = (props) => {
             <div className='w-full flex flex-col gap-2 items-center '>
                 <div className='font-semibold text-lg flex justify-center gap-4'>
                 <button type='submit'
-                className='px-5 py-3 border-2 border-black text-black hover:bg-black hover:text-white focus:scale-95 rounded-full'
+                className='lg:px-5 md:px-4 px-3 lg:py-3 md:py-2 py-1 md:border-2 border border-black text-black hover:bg-black hover:text-white focus:scale-95 rounded-full'
                 >submit
                 </button>
 
-                <button type='button' className='px-5 py-3 border-2 border-black text-black hover:bg-black hover:text-white focus:scale-95 rounded-full'
+                <button type='button' className='lg:px-5 md:px-4 px-3 lg:py-3 md:py-2 py-1 md:border-2 border border-black text-black hover:bg-black hover:text-white focus:scale-95 rounded-full'
                  onClick={()=>{
                     props.setSelectedExpense(null);
                 }}>
@@ -104,7 +104,7 @@ const EditExpense = (props) => {
                 </button>
                 </div>
                 <div>
-                    <button type='button' className='border-2 border-red-600 text-red-600 hover:bg-red-600 hover:text-white font-semibold rounded-full focus:scale-95 px-10 py-3'
+                    <button type='button' className='border-2 border-red-600 text-red-600 hover:bg-red-600 hover:text-white font-semibold rounded-full focus:scale-95 px-10 lg:py-3 md:py-2 py-1'
                     onClick={()=>{
                         props.setExpenseList((prev)=>prev.filter((item)=>
                             item.id!==props.selectedExpense.id
