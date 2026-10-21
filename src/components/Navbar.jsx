@@ -4,7 +4,7 @@ import { HandCoins,User } from 'lucide-react'
 const Navbar = () => {
   return (
     <div>
-        <div className='bg-white w-full lg:h-[8vmin] md:h-[6vmin]  h-[10vmin] fixed top-0 left-0 z-50 '>
+        <div className='bg-white w-full lg:h-[8vmin] md:h-[6vmin]  h-[8vmin] fixed top-0 left-0 z-50 '>
             <div className='flex items-start justify-around p-2 '>
                 <div className='flex items-center text-amber-400 font-bold lg:text-4xl md:text-3xl sm:text-2xl'>
                 <HandCoins className='mr-2 text-amber-400 lg:size-10 md:size-8 size-6' /> ExpenseTrack
