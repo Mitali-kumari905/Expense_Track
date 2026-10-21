@@ -6,16 +6,16 @@ const ExpenseRowHead = ({selectCategories,setselectCategories}) => {
     const [filter,setfilter]=useState(false);
   return (
     <div className='w-full'>
-        <div className='bg-amber-800 lg:text-3xl md:text-2xl text-xl justify-between  flex lg:gap-12 md:gap-10 gap-8 rounded flex-row p-2 text-white'>
-            <div className='w-[32%]'>
+        <div className='bg-amber-800 lg:text-2xl md:text-xl text-xs justify-between  flex lg:gap-12 md:gap-5 gap-3 rounded flex-row p-2 text-white'>
+            <div className='lg:w-[32%] w-[22%]'>
                 Description
             </div>
             <div className='bg-white w-2 rounded self-stretch'></div>
-            <div className='w-[32%]'>
+            <div className='lg:w-[32%] w-[22%]'>
                 Category
             </div>
             <div className='bg-white w-2 rounded self-stretch'></div>
-            <div className='w-[30%]'>
+            <div className='lg:w-[30%] w-[20%]'>
                 Amount
             </div>
             <div className='relative'>
