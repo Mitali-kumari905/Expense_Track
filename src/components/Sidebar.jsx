@@ -4,7 +4,7 @@ import {Menu,HandCoins} from 'lucide-react';
 const Sidebar = ({side,useSide}) => {
   return (
     <div
-      className={`relative shrink z-20 top-0  bg-black min-h-screen sm:max-w-[25%] md:max-w-[30%] lg:max-w-[35%] max-w-[35%] transition-transform duration-500 ease-in-out  ${side?"translate-x-[-80%]":"translate-x-0"}`}
+      className={`relative shrink z-20 top-0  bg-black min-h-screen sm:max-w-[25%] md:max-w-[30%] lg:max-w-[35%] max-w-[25%] transition-transform duration-500 ease-in-out  ${side?"translate-x-[-80%]":"translate-x-0"}`}
       >
         <div className='py-10'>
       <div className={`w-full absolute left-1  flex justify-end lg:px-4 md:px-3 px-2 py-6 `}>
@@ -25,7 +25,7 @@ const Sidebar = ({side,useSide}) => {
     side ? "opacity-0 invisible" : "opacity-100 visible"
   }`}>
       <div className='py-7 px-8 lg:mr-6 md:mr-5 mt-6'>
-        <div className='flex  flex-col lg:justify-start justify-center items-center text-amber-400 font-bold lg:text-3xl md:text-2xl sm:text-xl text-sm'>
+        <div className='flex  flex-col lg:justify-start justify-center items-center text-amber-400 font-bold lg:text-3xl md:text-2xl sm:text-sm text-xs'>
           <HandCoins className='mr-2 text-amber-400 lg:size-9 md:size-8 sm:size-6 size-10' /> ExpenseTrack
         </div>
         <div className='bg-amber-200 max-w-[95%] min-h-0.5 mt-5 rounded '></div>

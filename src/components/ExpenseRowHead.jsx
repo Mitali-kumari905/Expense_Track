@@ -6,22 +6,22 @@ const ExpenseRowHead = ({selectCategories,setselectCategories}) => {
     const [filter,setfilter]=useState(false);
   return (
     <div className='w-full'>
-        <div className='bg-amber-800 lg:text-2xl md:text-xl text-xs justify-between  flex lg:gap-12 md:gap-5 gap-3 rounded flex-row p-2 text-white'>
-            <div className='lg:w-[32%] w-[22%]'>
+        <div className='bg-amber-800 lg:text-2xl md:text-xl text-xs justify-between  flex  rounded flex-row lg:p-2 md:p-1 p-0 text-white'>
+            <div className='lg:w-[32%] w-[22%] pr-0.5'>
                 Description
             </div>
-            <div className='bg-white w-2 rounded self-stretch'></div>
+            <div className='bg-white lg:w-2 md:w-1 w-0.5 rounded self-stretch'></div>
             <div className='lg:w-[32%] w-[22%]'>
                 Category
             </div>
-            <div className='bg-white w-2 rounded self-stretch'></div>
+            <div className='bg-white lg:w-2 md:w-1 w-0.5 rounded self-stretch'></div>
             <div className='lg:w-[30%] w-[20%]'>
                 Amount
             </div>
             <div className='relative'>
                  <button
-                  className='flex lg:h-10 md:h-9 h-8 active:scale-95 rounded align-center lg:p-2 p-1 bg-white'>
-                     <SlidersHorizontal className='lg:size-9 md:size-7 size-6'
+                  className='flex lg:h-7 md:h-6 h-5 m-1 active:scale-95 rounded align-center lg:p-2 p-1 bg-white'>
+                     <SlidersHorizontal className='lg:size-6 md:size-5 size-4'
                      onClick={()=>setfilter(!filter)} color="#252323" />
                 </button>
                 {filter && (

@@ -36,7 +36,7 @@ const ExpenseRow = ({ expenseList,setExpenseList,setexpense,selectCategories,set
     });
 
   return (
-            <div className='w-full flex flex-col gap-3 lg:text-2xl md:text-xl sm:text-sm font-semibold'>
+            <div className='w-full flex flex-col  lg:text-2xl md:text-xl sm:text-sm font-semibold'>
                 {filterexpenses.map((el)=>(
                      <div key={el.id} className='bg-white border-2 border-amber-200 shadow-sm  justify-between flex gap-4 lg:min-h-30 md:min-h-20 sm:min-h-10 rounded-lg flex-row p-3 text-amber-800'>
                 <div className='w-[30%] overflow-y-auto'>
