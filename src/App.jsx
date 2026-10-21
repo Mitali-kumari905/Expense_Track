@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import Sidebar from './components/Sidebar'
 import Navbar from './components/Navbar'
 import Cards from './components/Cards'
@@ -10,9 +10,18 @@ import img2 from './assets/financial_growth_graph_with_coins_and_arrow-png.webp'
 import img3 from './assets/c3.png';
 
 const App = () => {
-  const [income, setincome] = useState(0)
-  const [expense,setexpense]=useState(0)
-  const [expenseList,setExpenseList]=useState([]);
+  const [income, setincome] = useState(()=>{
+    const saved=localStorage.getItem("income");
+    return saved!==null?Number(saved):0;
+  })
+  const [expense,setexpense]= useState(()=>{
+    const saved=localStorage.getItem("expense");
+    return saved!==null?Number(saved):0;
+  })
+  const [expenseList,setExpenseList]= useState(()=>{
+    const saved=localStorage.getItem("expenseList");
+    return saved ?JSON.parse(saved):[];
+  })
   const [selectCategories,setselectcategories]=useState([]);
   const balance=income-expense;
   const [search,setSearch]=useState('');
@@ -43,8 +52,17 @@ const App = () => {
     setExpenses:setexpense,
   }
   ]
+  useEffect(()=>{
+    localStorage.setItem("income",income);
+  },[income]);
+ 
+  useEffect(()=>{
+    localStorage.setItem("expense",expense);
+  },[expense]);
 
-
+  useEffect(()=>{
+    localStorage.setItem("expenseList",JSON.stringify(expenseList));
+  },[expenseList]);
   return (
     <div className='min-h-screen w-full bg-amber-300 overflow-y-auto'>
       <Navbar />
